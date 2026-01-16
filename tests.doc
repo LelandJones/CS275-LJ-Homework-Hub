@@ -1,0 +1,11 @@
+Structure Tests
+-	I added the <h1>, and it appeared as I expected, nothing unusual
+-	I added the <p> and it worked as intended. I noticed that if I cleaned up my code and entered a command after every sentence, it displayed it as if I had added a space after the period. Very useful information.
+-	I added the <ul> and forgot to add the <li> initially, but I did afterwards, just need to make a mental note.
+-	I added the <a>, and it went as expected, no issues
+-	I also added the <img>, and I initially had some trouble learning how to add an image, but after referring to the book, I found a method with a local file in the same folder.
+Link Test
+-	I clicked on the link numerous times and had no issues with the link loading.
+Image Test
+-	I broke the image, and the alt worked as planned.
+
