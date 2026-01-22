@@ -1,0 +1,32 @@
+h1 {
+    text-align: center;
+    color: red;
+    border: 10px solid blue;
+    padding: 10px;
+    margin-bottom: 20px;
+}
+
+p {
+    max-width: 700px;
+    margin: 20px;
+    padding: 10px;
+}
+
+ul {
+    max-width: 700px;
+    margin: 20px;
+    padding: 10px;
+}
+
+
+a {
+    max-width: 700px;
+    margin: 20px;
+    padding: 10px;
+}
+
+img {
+    max-width: 700px;
+    margin: 20px;
+    padding: 10px;
+}
