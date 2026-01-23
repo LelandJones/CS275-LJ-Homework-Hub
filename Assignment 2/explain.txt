@@ -1,0 +1,14 @@
+1. Pre-LLM Interaction: What happened to your page when you over-specified a selector? 
+        When I over specified a selector, it would stop applying all that was on it.
+2. Pre-LLM Interaction: What happens when, in Visual Studio Code, you click the colored square on a property that carries color? 
+        It opens a rainbow of colors that you can click on to make ti easier to change the color.
+3. Pre-LLM Interaction: Can you use selectors and properties to make .h2 look like .h1? 
+        Yes, if you take the same styles applied to h1 and give it to h2.
+4. Post-LLM Interaction: A screenshot and 3-sentence reflection: what did the LLM propose? 
+        It proposed not putting a border on the body as it could make the page cramped.
+    What was the one incomprehensible response that you learned more about? 
+        I was confused about 1fr as I thought you could just put it in the code, but turns out you need a grid layout for it to work properly.
+    What of those proposals did you keep? 
+    I changed the 1fr to a max size that would make sense. 
+    How did things improve subjectively?
+    It actually gave me a max size that the elemets would fit up to.

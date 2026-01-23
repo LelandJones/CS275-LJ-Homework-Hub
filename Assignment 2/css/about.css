@@ -1,32 +1,49 @@
+/* h1 centers the title and gives it a red color and a blue border. */
 h1 {
     text-align: center;
     color: red;
     border: 10px solid blue;
     padding: 10px;
-    margin-bottom: 20px;
+    margin: 20px;
 }
 
+/* Adds the clear spacing to all of the elements and provides a min and max width and height. */
+body {
+    min-width: 240px;
+    max-width: 1fr;
+    min-height: 40px;
+    max-height: 1000px;
+    margin: 20px;
+    padding: 10px;
+    overflow: scroll;
+    border: 25px solid green;
+    background-color: ghostwhite;
+}
+
+/* Adds the clear spacing around the paragraphs as well as a border. */
 p {
-    max-width: 700px;
-    margin: 20px;
+    margin: 10px;
+    padding: 10px;
+    border: 5px solid black;
+}
+
+/* Adds spacing around the h4 subheadings and a gray border. */
+h4 {
+    text-align: center;
+    border: 5px solid lightgray;
+    padding: 10px;
+    margin: 10px;
+}
+
+/* Adds spacing around the ul, li, and a elements. */
+ul, li, a{
+    margin: 10px;
     padding: 10px;
 }
 
-ul {
-    max-width: 700px;
-    margin: 20px;
-    padding: 10px;
-}
-
-
-a {
-    max-width: 700px;
-    margin: 20px;
-    padding: 10px;
-}
-
+/* Adds some extra spacing around the img and centers it, as well as giving it a purple border. */
 img {
-    max-width: 700px;
-    margin: 20px;
-    padding: 10px;
+    display: block;
+    margin: 0 auto;
+    border: 5px solid purple;
 }
