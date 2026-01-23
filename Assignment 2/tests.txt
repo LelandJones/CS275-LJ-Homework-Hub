@@ -1,8 +1,0 @@
-Structure Tests
--	I reused the same index from the previous assignment, everything rendered in completely fine.
-CSS Tests
--   I put in all of the min variables into each selector and it caused the page to act weirdly and appear abnormal whenIi shrunk it. After I only left the body with the minmax information, it did not have an issue.
--   I tried different overflow options to see what would happen, and the one I liked best was the scroll element.
--   After I added all of the padding, I went back and added borders so I could see the padding and spacing elements work in a visual manner.
-Responsive Test
--   I was able to change the browser window to all different shapes and sizes and had no issue with content not appearing.
