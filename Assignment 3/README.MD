@@ -10,15 +10,15 @@ Model Output: A light gray background, white surface, dark gray text, red accent
 # Design Notes
 
   - --color-bg: page background, dark gray
-  --color-surface: card and section backgrounds
-  --color-text: primary text, very dark gray
-  --color-accent: red accent for headings/links
-  --color-muted: secondary text, lighter gray
-  --font-base: base paragraph font 
-  --font-heading: headings 
-  --font-lg: large heading size 
-  --font-md: medium heading/card titles 
-  --font-sm: smaller text/captions 
+  - --color-surface: card and section backgrounds
+  -  --color-text: primary text, very dark gray
+  - --color-accent: red accent for headings/links
+  - --color-muted: secondary text, lighter gray
+  - --font-base: base paragraph font 
+  - --font-heading: headings 
+  - --font-lg: large heading size 
+  - --font-md: medium heading/card titles 
+  - --font-sm: smaller text/captions 
   --gap: general spacing
   --radius: rounded corners
   --shadow: subtle card shadow
