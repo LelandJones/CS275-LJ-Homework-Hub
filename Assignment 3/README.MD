@@ -1,3 +1,5 @@
+## Repository Link: https://github.com/LelandJones/CS275-LJ-Homework-Hub
+
 ## I used the class starter and changed most of the elements, but kept the shadow effect on the boxes and the H1's general format.
 
 # LLM transcript snippet
