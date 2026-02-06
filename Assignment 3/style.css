@@ -29,6 +29,9 @@ body {
   padding: 1rem;
 }
 
+a:focus {
+  outline: 2px solid var(--color-accent);
+}
 
 /* --- Header & Footer --- */
 header, footer {
@@ -36,10 +39,6 @@ header, footer {
   margin-bottom: 1rem;
   background: var(--color-surface);
   border-radius: var(--radius);
-}
-
-footer {
-  margin: 20%;
 }
 
 header h1 {
@@ -51,7 +50,6 @@ header h1 {
   color: var(--color-accent);
   font-style: italic;
 }
-
 
 .layout {
   display: grid;
@@ -88,7 +86,7 @@ header h1 {
   border-radius: var(--radius);
   box-shadow: var(--shadow);
   padding: 1rem;
-  transition: transform 0.2s ease, box-shadow 0.2s ease;
+  transition: transform 0.5s ease, box-shadow 0.5s ease;
 }
 
 .card img {
@@ -114,4 +112,5 @@ footer {
   margin-top: 2rem;
   font-size: 0.9rem;
   color: #666;
+  margin: 20%;
 }

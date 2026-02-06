@@ -1,0 +1,11 @@
+1.	What does the <head> section do for this page?
+
+It contains information based on the page, usually at the top of the page in the search bar above.
+
+2.	Why is alt text important—beyond “for screen readers”?
+
+It informs people what the image is supposed to be, in case it fails or the sizing is off, and it breaks. 
+
+3.	What’s the difference between <h1> and just making text large?
+
+I believe there is a difference if you were to look at it semantically, where H1 describes that the text is large, whereas just increasing the font size doesn’t let you describe that it is a large heading.

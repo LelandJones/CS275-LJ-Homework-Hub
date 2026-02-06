@@ -1,0 +1,12 @@
+Expectation Test
+-   I expect that when I put a list in my 1st section, it will fit in the box with no issues. -> implemented -> It did not fit how I thought it would, now i need to create an extra CSS line to make it fit in the middle as I intended.
+Expectation Test
+-   I expect that when I put a margin of 20% on the footer, the fram of the footer will shrink significantly down. -> It did change as I inteded
+Contrast Test
+-   --color-accent on --color-surface was a 9.89 ratio, determined by devtools.
+Contrast Test
+-   --color-text on --color-surface was a 21 ratio, determined by devtools.
+Focus Visibily Test
+-   I added a :focus to all links to give focus outline when the link is clicked.
+Responive Sanity Test
+-   At the smallest window size I could get it to, the image does not ignore the box it is in. It stays where it is supposed to.
