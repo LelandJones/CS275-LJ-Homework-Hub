@@ -25,6 +25,18 @@ Model Output: A light gray background, white surface, dark gray text, red accent
 
 # Accessibility Notes
 
+Checked with Developer Tools
+- --color-text on --color-surafce is a 19.3
+- --color-accent on --color-surafce is a 5.82
+- --color-muted on --color-surafce is a 16.53
+
+Accessibility Checklist:
+- It does have a <html lang="..">
+- It does have a descriptive Title
+- Links are meaningful
+- All ratios were checked
+- Focus outline is not removed
 
 
 # Timebox
+It took me about 2-3 Hours to complete this assignment.
