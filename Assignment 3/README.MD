@@ -19,9 +19,9 @@ Model Output: A light gray background, white surface, dark gray text, red accent
   - --font-lg: large heading size 
   - --font-md: medium heading/card titles 
   - --font-sm: smaller text/captions 
-  --gap: general spacing
-  --radius: rounded corners
-  --shadow: subtle card shadow
+  - --gap: general spacing
+  - --radius: rounded corners
+  - --shadow: subtle card shadow
 
 # Accessibility Notes
 
