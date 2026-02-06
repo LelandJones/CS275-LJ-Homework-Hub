@@ -9,7 +9,7 @@ Model Output: A light gray background, white surface, dark gray text, red accent
 
 # Design Notes
 
-  --color-bg: page background, dark gray
+  - --color-bg: page background, dark gray
   --color-surface: card and section backgrounds
   --color-text: primary text, very dark gray
   --color-accent: red accent for headings/links
