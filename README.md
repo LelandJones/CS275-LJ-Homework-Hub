@@ -1,1 +1,1 @@
-# This is the repository for all of my CS275 HW
+# This is the repository for all of CS275 HW
