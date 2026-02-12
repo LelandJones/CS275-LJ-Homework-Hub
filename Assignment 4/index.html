@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Leland Jones - Accessible Form Assignment</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+    <header>
+        <h1>CS275 - Form Assignment</h1>
+        <p class="tagline">This is for an assignment. Please fill out the form below.</p>
+    </header>
+
+    <main>
+        <form method="get">
+            <fieldset class="card">
+                <legend>Personal Information</legend>
+
+                <div class="field">
+                    <label for="name">Full Name</label>
+                    <input
+                    id="name"
+                    type="text"
+                    name="fullname"
+                    autocomplete ="name"
+                    required
+                    minlength="2"
+                    aria-describedby="full-name-hint"
+                    />
+                    <small id="full-name-hint">Please enter your full name.</small>
+                </div>
+
+                <div class="field">
+                    <label for="email">Email Address</label>
+                    <input
+                    id="userEmail"
+                    type="email"
+                    name="email"
+                    autocomplete="email"
+                    required
+                    aria-describedby="email-address-hint"
+                    />
+                    <small id="email-address-hint">Please enter a valid email address.</small>
+                </div>
+
+                <div class="field">
+                    <label for="phone">Phone</label>
+                    <input
+                    id="phone"
+                    type="tel"
+                    name="phone"
+                    placeholder="Phone Number"
+                    autocomplete="tel"
+                    pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}"
+                    required
+                    aria-describedby="phone-number-hint"
+                     />
+                    <small id="phone-number-hint">Please enter your phone number.</small>
+                </div>
+
+                <div class="field">
+                    <label for="password">Password</label>
+                    <input
+                    id="pwd"
+                    type="password"
+                    name="password"
+                    autocomplete="new-password"
+                    required
+                    minlength="8"
+                    aria-describedby="password-hint"
+                    />
+                    <small id="password-hint">Password must be at least 8 characters long.</small>
+                </div>
+            </fieldset>
+
+            <fieldset class="card">
+                <div class="field">
+                    <legend>Preferences</legend>
+                    <label for="drink">Favorite Drink</label>
+                    <select id="drink" 
+                    name="drink" 
+                    required
+                    aria-describedby="drink-hint">
+                    <option value="">Select a drink</option>
+                    <option value="Mountain Dew">Mountain Dew</option>
+                    <option value="Diet Coke">Diet Coke</option>
+                    <option value="Coke Zero">Coke Zero</option>
+                    <option value="Water">Water</option>
+                    </select>
+                    <small id="drink-hint">Please select your favorite drink.</small>
+                </div>
+
+                <div class="field">
+                    <label for="newsletter">Subscribe to Newsletter</label>
+                    <input
+                    id="newsletter"
+                    type="checkbox"
+                    name="newsletter"
+                    aria-describedby="newsletter-hint"
+                    value="Opt-in"
+                    />
+                    <small id="newsletter-hint">Check this box to subscribe to newsletter.</small>
+                </div>
+            </fieldset>
+
+
+            <button type="submit">Submit</button>
+            
+
+        </form>
+    </main>
