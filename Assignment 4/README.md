@@ -40,6 +40,11 @@ Accessibility Checklist:
 - All ratios were checked
 - Focus outline is not removed
 
+# Empathy Notes
+
+- The wording gives hints, like the password need 8 characters
+- The wording reminds users to include the @ in the email
+- The phone wording mentions to have the area code to help users not have to redo the phone number input.
 
 # Timebox
 It took me about 2 Hours to complete this assignment.
