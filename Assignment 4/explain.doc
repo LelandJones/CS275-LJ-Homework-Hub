@@ -1,0 +1,11 @@
+1.	Why labels + for/id beat placeholders for accessibility and error prevention,
+
+    It helps with screen readers and helps when the labels dont disappear when typing.
+
+2.	What aria-describedby adds to helper text,
+
+    It allows screen readers and such to read them to give extra guidance.
+
+3.	One place where native validation improved UX (and one limitation).
+
+    Nativ validation helps regulate the inputs such as email but I beleive it isn't fully customizable.

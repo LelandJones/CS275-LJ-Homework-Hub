@@ -1,0 +1,12 @@
+Grouping Test
+    - I created two fieldsets with one containign a legend that states the perosnal info and the other one stating the preferences of the user.
+Autocomplete Test
+    - The autocomplete values are all appropriate for each prompt.
+Constraints Sanity Test
+    - The password needs atleast 8 characters and putting banana in the email fails due to the input type being "email". Every label is required.
+Validity Styling Test
+    - I have a input valid and invalid that highlights a certain color depending if the info in it is correct. I also have a :focus-within in my fieldset.
+Contrast Test
+    - --color-text on --color-surface is over a 12 ratio veified by DevTools.
+Submission Test
+    - Whever I submitted the form, it updated the URL with the responses I gave: "http://127.0.0.1:3000/Assignment%204/index.html?fullname=leland&email=sdfd%40asa&phone=850-444-5555&password=asdfgfdsdbfefvfdfvf&drink=Diet+Coke&newsletter=Opt-in"
