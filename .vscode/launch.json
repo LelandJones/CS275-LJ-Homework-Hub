@@ -1,0 +1,23 @@
+// .vscode/launch.json
+{
+  "version": "0.2.0",
+  "configurations": [
+    
+    {
+      "name": "Launch Node Program",
+      "program": "${relativeFile}",
+      "request": "launch",
+      "skipFiles": [
+        "<node_internals>/**"
+      ],
+      "type": "node"
+    },
+        {
+      "type": "chrome",
+      "request": "launch",
+      "name": "Open with Live Preview",
+      "url": "http://127.0.0.1:3000/${relativeFile}",
+      "webRoot": "${workspaceFolder}"
+    }
+  ]
+}
