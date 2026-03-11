@@ -24,6 +24,8 @@ console.assert(JSON.stringify(data1) === '{"title":"Inventory","items":[{"name":
 
 console.assert(renderList({ title: "Empty", items: [] }) === "<h2>Empty</h2><ul></ul>", "empty list renders an empty UL");
 
+console.assert(renderList(data1).startsWith(`<h2>${data1.title}</h2>`), "HTML should start with the title");
+
 
 function renderSodas(data2) {
 
@@ -54,4 +56,6 @@ console.assert(JSON.stringify(data2) === '{"title":"Soda Options","sodas":[{"nam
 
 console.assert(renderSodas({ title: "Empty", sodas: [] }) === "<section><h2>Empty</h2><ul></ul></section>", "empty list renders an empty UL");
 
-console.assert()
+console.assert(renderSodas(data2).includes("<li>"), "Need to have the <li> tag" )
+
+console.assert(renderSodas(data2).includes("</li>"), "Need to have the </li> tag" )
