@@ -29,4 +29,8 @@ console.assert(renderList(data1).startsWith(``<h2>${data1.title}</h2>``), "HTML 
 #### Short Excerpt
 `data.items.map(item => ``<li>${item.name}: ${item.qty}</li>``).join("")`
 
-I liked the .map() and .join("") to take the data and put it into a string. From there, I changed the structure names as needed to fit my code. I felt the methods the LLM provided were viable enough to use for this assignment.
+`console.assert(renderSodas(data2).includes("<li>"), "Need to have the <li> tag" )`
+
+I liked the .map() and .join("") to take the data and put it into a string. From there, I changed the structure names as needed to fit my code. The methods the LLM provided were viable for this assignment.
+
+The 2nd excerpt was one I implemented in my renderSodas, as it would be a valuable asset to ensure it works and that the HTML loads properly.
