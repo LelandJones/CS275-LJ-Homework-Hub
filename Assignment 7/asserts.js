@@ -1,5 +1,4 @@
 (function () {
-    // Grab the list
 
     const input = document.getElementById("input");
     const addBtn = document.getElementById("addBtn");
