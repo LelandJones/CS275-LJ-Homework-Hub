@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <title>React Hello World</title>
+  </head>
+  <body>
+    <div id="root"></div>
+
+    <script src="https://unpkg.com/react@18/umd/react.development.js"></script>
+    <script src="https://unpkg.com/react-dom@18/umd/react-dom.development.js"></script>
+    <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+
+    <script type="text/babel">
+      function App() {
+        return <h1>Hello Leland!</h1>;
+      }
+
+      function TodoItem(props) {
+        return React.createElement("li", null, props.text);
+      }
+
+
+      // ✅ Simple assert function
+      function assert(condition, message) {
+        const output = document.getElementById("test-output");
+        const p = document.createElement("p");
+
+        if (condition) {
+          p.textContent = "Passed: " + message;
+        } else {
+          p.textContent = "Failed: " + message;
+        }
+
+        output.appendChild(p);
+      }
+
+      // ✅ Run all tests
+      function runTests() {
+        const output = document.getElementById("test-output");
+        output.innerHTML = ""; // clear old results
+
+        const li = document.querySelectorAll("li");
+
+        assert(li.length === 2, "TodoItem should render two list items");
+        assert(li[0].textContent === "Learn React" && li[1].textContent === "Avoid div soup", "First item should be 'Learn React' and second item should be 'Avoid div soup'");
+
+        const emptylist = [];
+        assert(emptylist.length === 0, "Empty list should have length 0");
+
+
+
+      }
+
+      const root = ReactDOM.createRoot(document.getElementById("root"));
+      root.render(<><App /> 
+        <ul>
+          <TodoItem text="Learn React" />
+          <TodoItem text="Avoid div soup" />
+        </ul>
+
+
+        <button onClick={runTests}>Run Tests</button>
+
+        
+        <p id="test-output"></p>
+
+        </>
+      );
+
+        
+    </script>
+  </body>
+</html>
