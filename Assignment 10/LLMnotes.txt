@@ -1,3 +1,7 @@
+Initial Prompt:
+“I’m building a simple React component that fetches JSON using fetch(). Here is my API URL: https://api.github.com/users/octocat. Please generate a component with loading, success, and error states.”
+
+First Code from LLM:
 import React, { useEffect, useState } from "react";
 
 function GitHubUser() {
@@ -23,25 +27,18 @@ function GitHubUser() {
       });
   }, []);
 
-  if (loading) {
-    return <p>Loading...</p>;
-  }
-
-  if (error) {
-    return <p>Error: {error}</p>;
-  }
+  if (loading) return <p>Loading...</p>;
+  if (error) return <p>Error: {error}</p>;
 
   return (
     <div>
       <h2>{data.login}</h2>
-      <img src={data.avatar_url} alt={data.login} width="100" />
       <p>Followers: {data.followers}</p>
-      <p>Public Repos: {data.public_repos}</p>
-      <a href={data.html_url} target="_blank" rel="noreferrer">
-        View Profile
-      </a>
     </div>
   );
 }
 
 export default GitHubUser;
+
+Changes I Made:
+I converted the React component to work without build tools by using React.createElement instead of JSX. I also added three console.assert() checks to verify that the API response exists, key data is returned, and elements render correctly in the DOM. This ensures the program meets the assignment requirements for validation and testing.
