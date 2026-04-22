@@ -34,7 +34,7 @@ export default function App() {
         setLoading(false);
 
         // Assert 3: check loading finished
-        console.assert(loading === true, "Loading state should still be true before update");
+        console.assert(loading === false, "Loading state should still be true before update");
       })
       .catch((err) => {
         // ASSERT 4: Error handling works
