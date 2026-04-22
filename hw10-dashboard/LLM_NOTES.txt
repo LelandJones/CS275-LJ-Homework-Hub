@@ -43,3 +43,4 @@ export default GitHubUser;
 Changes I Made:
 I appreciated what it gave me, I did add the assertions and changed it to work with vite. 
 I also added more info that pops up on the page like the avatar and the repository. 
+I also added a comment that lets me change the url to make sure the error works as intended.
