@@ -44,7 +44,7 @@ export default function App() {
 
   setTimeout(() => {
     console.assert(
-      document.querySelector("h1"),
+      document.querySelector("h3"),
       "❌ Heading is missing"
     );
 
