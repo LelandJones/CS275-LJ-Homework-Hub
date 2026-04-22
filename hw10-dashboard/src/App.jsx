@@ -5,7 +5,7 @@ export default function App() {
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
 
-  const API_URL = "https://api.github.com/users/octocat";
+  //const API_URL = "https://api.github.com/users/octocat";
 
   useEffect(() => {
     fetch(API_URL)
