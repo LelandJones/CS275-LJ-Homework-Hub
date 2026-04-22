@@ -5,13 +5,13 @@ export default function App() {
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
 
-  const API_URL = "https://jsonplaceholder.typicode.com/users/1";
+  const API_URL = "https://api.github.com/users/octocat";
 
   useEffect(() => {
     fetch(API_URL)
       .then((res) => {
         if (!res.ok) {
-          throw new Error("API request failed");
+          throw new Error("GitHub user not found");
         }
         return res.json();
       })
@@ -25,21 +25,51 @@ export default function App() {
       });
   }, []);
 
+  // ------------------------
+  // Assertions
+  // ------------------------
   setTimeout(() => {
-    console.assert(document.querySelector("h1"), "Heading missing");
-    console.assert(data && data.name, "Data not loaded");
-    console.assert(!loading, "Still loading");
+    console.assert(
+      document.querySelector("h1"),
+      "❌ Heading is missing"
+    );
+
+    console.assert(
+      data && data.login,
+      "❌ GitHub user data not loaded"
+    );
+
+    console.assert(
+      !loading,
+      "❌ Still stuck in loading state"
+    );
   }, 1000);
+
+  // ------------------------
+  // STATES
+  // ------------------------
 
   if (loading) return <h2>Loading...</h2>;
   if (error) return <h2>Error: {error}</h2>;
 
   return (
     <div>
-      <h1>User Dashboard</h1>
-      <p>Name: {data.name}</p>
-      <p>Email: {data.email}</p>
-      <p>City: {data.address.city}</p>
+      <h1>GitHub User Dashboard</h1>
+
+      <img
+        src={data.avatar_url}
+        alt="avatar"
+        width="100"
+      />
+
+      <p><strong>Username:</strong> {data.login}</p>
+      <p><strong>Name:</strong> {data.name}</p>
+      <p><strong>Public Repos:</strong> {data.public_repos}</p>
+      <p><strong>Followers:</strong> {data.followers}</p>
+
+      <a href={data.html_url} target="_blank">
+        View Profile
+      </a>
     </div>
   );
 }
