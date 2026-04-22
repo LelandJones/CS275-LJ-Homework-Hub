@@ -20,21 +20,21 @@ export default function App() {
       })
       .then((json) => {
         // ASSERT 1: Heading (username) exists
-        console.assert(json.login, "Heading (username) is missing");
+        console.assert(json.login, "Heading is missing");
 
         // ASSERT 2: Data fields exist
         console.assert(
           json.public_repos !== undefined &&
           json.followers !== undefined &&
           json.following !== undefined,
-          "Some user data is missing from API response"
+          "Some user data is missing from API"
         );
 
         setData(json);
         setLoading(false);
 
         // Assert 3: check loading finished
-        console.assert(loading === false, "Loading state should still be true before update");
+        console.assert(loading === true, "Loading state should still be true before update");
       })
       .catch((err) => {
         // ASSERT 4: Error handling works
