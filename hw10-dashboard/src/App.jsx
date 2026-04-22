@@ -34,7 +34,9 @@ export default function App() {
   return (
     <div>
       <h2>{data.login}</h2>
+      <p>{data.avatar_url}</p>
       <p>Followers: {data.followers}</p>
+      
     </div>
   );
 }
