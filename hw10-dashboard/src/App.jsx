@@ -41,4 +41,23 @@ export default function App() {
       
     </div>
   );
+
+  setTimeout(() => {
+    console.assert(
+      document.querySelector("h1"),
+      "❌ Heading is missing"
+    );
+
+    console.assert(
+      data && data.login,
+      "❌ GitHub user data could not be found"
+    );
+
+    console.assert(
+      !loading,
+      "❌ Still stuck in loading state"
+    );
+  }, 1000);
+
 }
+
