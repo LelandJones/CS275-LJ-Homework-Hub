@@ -6,7 +6,7 @@ export default function App() {
   const [error, setError] = useState(null);
 
   //const API_URL = "https://api.github.com/users/octocat";
-  const API_URL = "https://api.github.com/users/octoct";
+  const API_URL = "https://api.github.com/users/thisuserdoesnotexist123";
 
   useEffect(() => {
     fetch(API_URL)
