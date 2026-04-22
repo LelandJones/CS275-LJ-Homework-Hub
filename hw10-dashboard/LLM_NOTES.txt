@@ -41,4 +41,5 @@ function GitHubUser() {
 export default GitHubUser;
 
 Changes I Made:
-I converted the React component to work without build tools by using React.createElement instead of JSX. I also added three console.assert() checks to verify that the API response exists, key data is returned, and elements render correctly in the DOM. This ensures the program meets the assignment requirements for validation and testing.
+I appreciated what it gave me, I did add the assertions and changed it to work with vite. 
+I also added more info that pops up on the page like the avatar and the repository. 
