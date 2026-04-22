@@ -1,24 +1,29 @@
-import React, { useEffect, useState } from "react";
+import { useEffect, useState } from "react";
 
-function GitHubUser() {
+export default function App() {
   const [data, setData] = useState(null);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
 
+  const API_URL = "https://api.github.com/users/octocat";
+
+  // Test for error
+  //const API_URL = "https://api.github.com/users/thisuserdoesnotexist123";
+
   useEffect(() => {
-    fetch("https://api.github.com/users/octocat")
-      .then((response) => {
-        if (!response.ok) {
+    fetch(API_URL)
+      .then((res) => {
+        if (!res.ok) {
           throw new Error("Network response was not ok");
         }
-        return response.json();
+        return res.json();
       })
-      .then((data) => {
-        setData(data);
+      .then((json) => {
+        setData(json);
         setLoading(false);
       })
-      .catch((error) => {
-        setError(error.message);
+      .catch((err) => {
+        setError(err.message);
         setLoading(false);
       });
   }, []);
