@@ -5,8 +5,10 @@ export default function App() {
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
 
-  //const API_URL = "https://api.github.com/users/octocat";
-  const API_URL = "https://api.github.com/users/thisuserdoesnotexist123";
+  const API_URL = "https://api.github.com/users/octocat";
+
+  // Test for error
+  //const API_URL = "https://api.github.com/users/thisuserdoesnotexist123";
 
   useEffect(() => {
     fetch(API_URL)
@@ -37,7 +39,7 @@ export default function App() {
 
     console.assert(
       data && data.login,
-      "❌ GitHub user data not loaded"
+      "❌ GitHub user data could not be found"
     );
 
     console.assert(
