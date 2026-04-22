@@ -67,6 +67,7 @@ export default function App() {
       <p><strong>Company:</strong> {data.company}</p>
       <p><strong>Public Repos:</strong> {data.public_repos}</p>
       <p><strong>Followers:</strong> {data.followers}</p>
+      <p><strong>Following:</strong> {data.following}</p>
 
 
       <a href={data.html_url} target="_blank">
