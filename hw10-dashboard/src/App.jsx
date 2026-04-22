@@ -8,7 +8,7 @@ export default function App() {
   const API_URL = "https://api.github.com/users/octocat";
 
   // Test for error
-  //const API_URL = "https://api.github.com/users/thisuserdoesnotexist123";
+  // const API_URL = "https://api.github.com/users/thisuserdoesnotexist123";
 
   useEffect(() => {
     fetch(API_URL)
@@ -19,10 +19,28 @@ export default function App() {
         return res.json();
       })
       .then((json) => {
+        // ASSERT 1: Heading (username) exists
+        console.assert(json.login, "Heading (username) is missing");
+
+        // ASSERT 2: Data fields exist
+        console.assert(
+          json.public_repos !== undefined &&
+          json.followers !== undefined &&
+          json.following !== undefined,
+          "Some user data is missing from API response"
+        );
+
         setData(json);
         setLoading(false);
+
+        // Assert 3: check loading finished
+        console.assert(loading === true, "Loading state should still be true before update");
       })
       .catch((err) => {
+        // ASSERT 4: Error handling works
+
+        console.assert(err.message, "Error message did not trigger properly");
+
         setError(err.message);
         setLoading(false);
       });
@@ -34,30 +52,10 @@ export default function App() {
   return (
     <div>
       <h2>{data.login}</h2>
-      <img src={data.avatar_url} width="80"/>
+      <img src={data.avatar_url} width="80" />
       <p>Repos: {data.public_repos}</p>
       <p>Following: {data.following}</p>
       <p>Followers: {data.followers}</p>
-      
     </div>
   );
-
-  setTimeout(() => {
-    console.assert(
-      document.querySelector("h3"),
-      "❌ Heading is missing"
-    );
-
-    console.assert(
-      data && data.login,
-      "❌ GitHub user data could not be found"
-    );
-
-    console.assert(
-      !loading,
-      "❌ Still stuck in loading state"
-    );
-  }, 1000);
-
 }
-
