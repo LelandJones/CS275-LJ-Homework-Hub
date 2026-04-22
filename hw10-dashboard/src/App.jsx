@@ -34,7 +34,7 @@ export default function App() {
   return (
     <div>
       <h2>{data.login}</h2>
-      <p>{data.avatar_url}</p>
+      <img src={data.avatar_url} width="80" />
       <p>Followers: {data.followers}</p>
       
     </div>
