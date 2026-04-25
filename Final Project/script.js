@@ -75,15 +75,21 @@ function applyFilters() {
   let filtered = allBalls;
 
   if (filters.brand) {
-    filtered = filtered.filter(b => b.brand === filters.brand);
+    filtered = filtered.filter(b =>
+      b.brand.toLowerCase() === filters.brand.toLowerCase()
+    );
   }
 
   if (filters.oil) {
-    filtered = filtered.filter(b => b.oilRating === filters.oil);
+    filtered = filtered.filter(b =>
+      b.oilRating.toLowerCase() === filters.oil.toLowerCase()
+    );
   }
 
   if (filters.motion) {
-    filtered = filtered.filter(b => b.ballMotion === filters.motion);
+    filtered = filtered.filter(b =>
+      b.ballMotion.toLowerCase() === filters.motion.toLowerCase()
+    );
   }
 
   renderProducts(filtered);
@@ -182,9 +188,12 @@ function renderProducts(data) {
 fetch("./api/data.json")
   .then(res => res.json())
   .then(data => {
-    console.log("DATA RECEIVED:", data); // 👈 important
+    console.log("DATA RECEIVED:", data);
 
     allBalls = data;
+
     renderProducts(allBalls);
+    populateFilters(allBalls);   // ✅ ADD THIS
+    setupFilters();              // ✅ AND THIS
   })
   .catch(err => console.error("Fetch error:", err));

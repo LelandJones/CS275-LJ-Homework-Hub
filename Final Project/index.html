@@ -1,16 +1,22 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-  <title>The Pros Shop Bowling Balls</title>
+  <meta charset="UTF-8" />
+  <title>Final Project - Pro Shop Bowling Balls</title>
   <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
 
-  <h1>The Pro Shop</h1>
+  <header>
+    <h1>Final Project: The Pro Shop</h1>
+  </header>
 
-  <!-- FILTERS -->
-  <div id="filters">
+  <!-- FILTER SECTION -->
+  <section id="filters">
+
+    <h3>Filter Balls</h3>
+
     <select id="brandFilter">
       <option value="">All Brands</option>
     </select>
@@ -22,21 +28,32 @@
     <select id="motionFilter">
       <option value="">All Ball Motions</option>
     </select>
-  </div>
 
-  <!-- PRODUCTS -->
-  <div id="ball-container"></div>
+  </section>
 
-  <!-- CART (NOW AT BOTTOM) -->
   <hr>
 
-  <div id="cart">
+  <!-- PRODUCT GRID -->
+  <main>
+    <div id="ball-container"></div>
+  </main>
+
+  <hr>
+
+  <!-- CART SECTION (BOTTOM OF PAGE) -->
+  <footer id="cart">
+
     <h2>Cart (0)</h2>
+
     <div id="cart-items"></div>
 
     <h3 id="cart-total">Total: $0</h3>
-    <button onclick="goToCheckout()">Proceed to Checkout</button>
-  </div>
+
+    <button onclick="goToCheckout()">
+      Proceed to Checkout
+    </button>
+
+  </footer>
 
   <script src="script.js"></script>
 
