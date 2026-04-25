@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>The Pros Shop Bowling Balls</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+  <h1>The Pro Shop</h1>
+
+  <!-- FILTERS -->
+  <div id="filters">
+    <select id="brandFilter">
+      <option value="">All Brands</option>
+    </select>
+
+    <select id="oilFilter">
+      <option value="">All Oil Ratings</option>
+    </select>
+
+    <select id="motionFilter">
+      <option value="">All Ball Motions</option>
+    </select>
+  </div>
+
+  <!-- PRODUCTS -->
+  <div id="ball-container"></div>
+
+  <!-- CART (NOW AT BOTTOM) -->
+  <hr>
+
+  <div id="cart">
+    <h2>Cart (0)</h2>
+    <div id="cart-items"></div>
+
+    <h3 id="cart-total">Total: $0</h3>
+    <button onclick="goToCheckout()">Proceed to Checkout</button>
+  </div>
+
+  <script src="script.js"></script>
+
+</body>
+</html>
