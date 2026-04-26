@@ -9,12 +9,11 @@
 <body>
 
   <header>
-    <h1>Final Project: The Pro Shop</h1>
+    <h1>The Pro's Shop</h1>
   </header>
 
   <!-- FILTER SECTION -->
   <section id="filters">
-
     <h3>Filter Balls</h3>
 
     <select id="brandFilter">
@@ -28,7 +27,6 @@
     <select id="motionFilter">
       <option value="">All Ball Motions</option>
     </select>
-
   </section>
 
   <hr>
@@ -40,9 +38,8 @@
 
   <hr>
 
-  <!-- CART SECTION (BOTTOM OF PAGE) -->
+  <!-- CART SECTION -->
   <footer id="cart">
-
     <h2>Cart (0)</h2>
 
     <div id="cart-items"></div>
@@ -52,8 +49,13 @@
     <button onclick="goToCheckout()">
       Proceed to Checkout
     </button>
-
   </footer>
+
+  <hr>
+
+  <!-- TEST BUTTON -->
+  <button onclick="runTests()">Run Tests</button>
+  <div id="test-results"></div>
 
   <script src="script.js"></script>
 
