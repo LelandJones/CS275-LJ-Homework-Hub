@@ -12,7 +12,7 @@ body {
 /* =========================
    HEADER
 ========================= */
-h1 {
+header {
   text-align: center;
   color: #ff7a00; /* orange accent */
   margin-bottom: 20px;
@@ -90,6 +90,11 @@ button {
 
 button:hover {
   background-color: #ff9a33;
+}
+
+button:disabled {
+  background: #555;
+  color: #ccc;
 }
 
 /* =========================

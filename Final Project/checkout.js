@@ -1,8 +1,7 @@
 const cart = JSON.parse(localStorage.getItem("cart")) || [];
 
-/* =========================
-   CALCULATE TOTAL
-========================= */
+// CALCULATE TOTAL
+
 function getTotal() {
   return cart.reduce((sum, item) => {
     const drillingCost = item.drilling ? 25 : 0;
@@ -10,9 +9,8 @@ function getTotal() {
   }, 0);
 }
 
-/* =========================
-   RENDER CHECKOUT
-========================= */
+// RENDER CHECKOUT
+
 function renderCheckout() {
   const container = document.getElementById("checkout-items");
   const totalEl = document.getElementById("checkout-total");
@@ -52,9 +50,7 @@ function renderCheckout() {
   totalEl.innerText = `Total: $${getTotal()}`;
 }
 
-/* =========================
-   PLACE ORDER
-========================= */
+// PLACE ORDER
 function placeOrder() {
   alert("Order placed successfully! 🎳");
 
@@ -62,7 +58,5 @@ function placeOrder() {
   window.location.href = "index.html";
 }
 
-/* =========================
-   INIT
-========================= */
+
 renderCheckout();

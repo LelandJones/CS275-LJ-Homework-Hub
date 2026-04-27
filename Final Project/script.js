@@ -1,13 +1,17 @@
 let allBalls = [];
 let cart = JSON.parse(localStorage.getItem("cart")) || [];
 
-/* =========================
-   CART FUNCTIONS
-========================= */
+// CART FUNCTIONS
+
 function addToCart(ball) {
+  if (!ball.inStock) {
+    alert("This item is out of stock.");
+    return;
+  }
+
   const newItem = {
     ...ball,
-    drilling: false // default
+    drilling: false
   };
 
   cart.push(newItem);
@@ -30,9 +34,7 @@ function removeFromCart(index) {
   renderCart();
 }
 
-/* =========================
-   CART TOTAL
-========================= */
+// CART TOTAL
 function getCartTotal() {
   return cart.reduce((sum, item) => {
     const drillingCost = item.drilling ? 25 : 0;
@@ -40,9 +42,7 @@ function getCartTotal() {
   }, 0);
 }
 
-/* =========================
-   RENDER CART (WITH DRILLING)
-========================= */
+// RENDER CART
 function renderCart() {
   const cartItems = document.getElementById("cart-items");
   const cartTitle = document.querySelector("#cart h2");
@@ -86,26 +86,20 @@ function renderCart() {
   }
 }
 
-/* =========================
-   NAVIGATION
-========================= */
+// NAVIGATION
 function goToCheckout() {
   localStorage.setItem("cart", JSON.stringify(cart));
   window.location.href = "checkout.html";
 }
 
-/* =========================
-   FILTER STATE
-========================= */
+// FILTER STATE
 const filters = {
   brand: "",
   oil: "",
   motion: ""
 };
 
-/* =========================
-   APPLY FILTERS
-========================= */
+// APPLY FILTERS
 function applyFilters() {
   let filtered = [...allBalls];
 
@@ -130,9 +124,8 @@ function applyFilters() {
   renderProducts(filtered);
 }
 
-/* =========================
-   FILTER SETUP
-========================= */
+// FILTER SETUP
+
 function setupFilters() {
   const brandFilter = document.getElementById("brandFilter");
   const oilFilter = document.getElementById("oilFilter");
@@ -156,9 +149,8 @@ function setupFilters() {
   });
 }
 
-/* =========================
-   POPULATE FILTERS
-========================= */
+// POPULATE FILTERS
+
 function populateFilters(data) {
   const brandFilter = document.getElementById("brandFilter");
   const oilFilter = document.getElementById("oilFilter");
@@ -183,9 +175,8 @@ function populateFilters(data) {
   });
 }
 
-/* =========================
-   RENDER PRODUCTS 
-========================= */
+// RENDER PRODUCTS 
+
 function renderProducts(data) {
   const container = document.getElementById("ball-container");
 
@@ -210,8 +201,15 @@ function renderProducts(data) {
       <p><strong>Motion:</strong> ${ball.ballMotion || "N/A"}</p>
       <p><strong>Price:</strong> $${ball.price || 0}</p>
 
-      <button onclick='addToCart(${JSON.stringify(ball)})'>
-        Add to Cart
+      <p>
+        ${ball.inStock ? "In Stock" : "Out of Stock"}
+      </p>
+
+      <button 
+        onclick='addToCart(${JSON.stringify(ball)})'
+        ${!ball.inStock ? "disabled" : ""}
+      >
+        ${ball.inStock ? "Add to Cart" : "Out of Stock"}
       </button>
 
       <hr>
@@ -221,10 +219,8 @@ function renderProducts(data) {
   });
 }
 
-/* =========================
-   FETCH DATA
-========================= */
-fetch("http://172.20.10.5/api/data.json")
+// FETCH DATA
+fetch("./api/data.json")
   .then(res => res.json())
   .then(data => {
     allBalls = data;
@@ -236,59 +232,64 @@ fetch("http://172.20.10.5/api/data.json")
   })
   .catch(err => console.error("Fetch error:", err));
 
-/* =========================
-   TESTS
-========================= */
+// TESTS
 function runTests() {
   let passed = 0;
   let failed = 0;
 
   function test(condition, message) {
     if (condition) {
-      console.log("✅ PASS:", message);
+      console.log("✅", message);
       passed++;
     } else {
-      console.error("❌ FAIL:", message);
+      console.error("❌", message);
       failed++;
     }
   }
 
-  test(Array.isArray(allBalls), "Data should be an array");
-  test(allBalls.length > 0, "Data should not be empty");
-
-  renderProducts(allBalls);
-
-  const renderedItems = document.querySelectorAll("#ball-container div");
+  // DATA TESTS
+  test(Array.isArray(allBalls), "Data is an array");
+  test(allBalls.length > 0, "Data is not empty");
 
   test(
-    renderedItems.length === allBalls.length,
-    "Rendered items match dataset"
+    allBalls.every(b => b.name && b.price !== undefined),
+    "Each ball has name and price"
   );
 
+  // UI TEST
+  renderProducts(allBalls);
+
+  const items = document.querySelectorAll("#ball-container div");
+
+  test(
+    items.length === allBalls.length,
+    "Rendered items match data length"
+  );
+
+  // NON-MUTATION TEST
   const before = JSON.stringify(allBalls);
   applyFilters();
   const after = JSON.stringify(allBalls);
 
-  test(before === after, "No mutation occurs");
+  test(before === after, "Data is not mutated");
 
+  // EDGE CASE TEST
   renderProducts([]);
+
   const container = document.getElementById("ball-container");
 
   test(
     container.innerText.includes("No bowling balls"),
-    "Empty state works"
+    "Empty state displays correctly"
   );
 
-  test(
-  allBalls.every(b => typeof b.price === "number"),
-  "All items have numeric price values"
-);
-
+  // RESULT OUTPUT
   document.getElementById("test-results").innerHTML = `
     <p>Passed: ${passed}</p>
     <p>Failed: ${failed}</p>
   `;
 
-  applyFilters();
+  // restore UI
+  renderProducts(allBalls);
   renderCart();
 }
