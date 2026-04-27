@@ -1,0 +1,12 @@
+sudo nano /etc/nginx/sites-available/default
+
+
+location /api/ {
+    alias /home/lelandjones/proshop/api/;
+
+    add_header Access-Control-Allow-Origin "*" always;
+    add_header Access-Control-Allow-Methods "GET, OPTIONS" always;
+    add_header Access-Control-Allow-Headers "*" always;
+
+    autoindex on;
+}
