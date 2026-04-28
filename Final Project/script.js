@@ -219,7 +219,7 @@ function renderProducts(data) {
 }
 
 // FETCH DATA
-fetch("./api/data.json")
+fetch("http://172.20.10.5/api/data.json")
   .then(res => res.json())
   .then(data => {
     allBalls = data;
