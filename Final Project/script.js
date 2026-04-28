@@ -125,7 +125,6 @@ function applyFilters() {
 }
 
 // FILTER SETUP
-
 function setupFilters() {
   const brandFilter = document.getElementById("brandFilter");
   const oilFilter = document.getElementById("oilFilter");
