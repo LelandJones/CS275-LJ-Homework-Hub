@@ -1,12 +1,24 @@
-sudo nano /etc/nginx/sites-available/default
+# sudo nano /etc/nginx/sites-available/default
 
+server {
+    listen 80 default_server;
+    listen [::]:80 default_server;
 
-location /api/ {
-    alias /home/lelandjones/proshop/api/;
+    root /var/www/html;
 
-    add_header Access-Control-Allow-Origin "*" always;
-    add_header Access-Control-Allow-Methods "GET, OPTIONS" always;
-    add_header Access-Control-Allow-Headers "*" always;
+    index index.html index.htm index.nginx-debian.html;
 
-    autoindex on;
+    server_name _;
+    
+    location / {
+        try_files $uri $uri/ =404;
+    }
+    location /api/ {
+        alias /home/lelandjones/proshop/api/;
+
+        add_header Access-Control-Allow-Origin "*" always;
+        add_header Access-Control-Allow-Methods "GET, OPTIONS" always;
+        add_header Access-Control-Allow-Headers "*" always;
+        autoindex on;
+    }
 }
